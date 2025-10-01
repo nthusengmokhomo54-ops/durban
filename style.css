@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  color: #333;
+}
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+  color: #2c3e50;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #e67e22;
+  border-bottom: 2px solid #e67e22;
+}
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.hero-image:hover {
+  transform: scale(1.05);
+}
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+}
+.hero-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-overlay .hero-caption {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.welcome-message {
+  text-align: center;
+  margin: 2rem 0;
+}
+.color-btn,
+.fun-btn,
+.filter-btn,
+.slide-btn {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.color-btn:hover,
+.fun-btn:hover,
+.filter-btn:hover,
+.slide-btn:hover {
+  background-color: #d35400;
+  transform: scale(1.05);
+}
+.slideshow {
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.slides {
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+.content,
+.about-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.content h2,
+.about-section h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.pull-quote,
+blockquote {
+  font-style: italic;
+  text-align: right;
+  margin: 1rem 0;
+  border-right: 4px solid #e67e22;
+  padding-right: 1rem;
+  color: #555;
+}
+.float-image {
+  float: right;
+  width: 300px;
+  margin: 0 0 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.caption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.gallery-filters {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+.filter-btn {
+  margin: 0 0.5rem;
+}
+.lightbox {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+.lightbox-caption {
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+.hidden {
+  display: none;
+}
+#funFact {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #2c3e50;
+}
+.hidden {
+  display: none;
+}
+
+.more-info-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.fun-fact {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 80%;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+.filter-btn.active {
+  background-color: #0077cc;
+  color: white;
+}
+.filter-btn.active {
+  background-color: #0077cc;
+  color: white;
+}
+.filter-btn.active {
+  background-color: #0077cc;
+  color: white;
+}
+/* === Filter Buttons Styling === */
+.gallery-filters {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  background-color: #ddd;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin: 0.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #333;
+}
+
+/* Highlight the active filter */
+.filter-btn.active {
+  background-color: #0077cc;
+  color: white;
+}
+
+footer {
+  background: rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .float-image {
+    float: none;
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+  }
+  .hero-overlay h2 {
+    font-size: 2rem;
+  }
+  .hero-overlay .hero-caption {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .slide-btn {
+    font-size: 1.5rem;
+  }
+}

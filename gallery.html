@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Durban in Pictures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ======== GENERAL ======== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    h1, h2 {
+      font-family: 'Lora', serif;
+    }
+
+    /* ======== NAVIGATION BAR ======== */
+    header {
+      background-color: #00695c;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #ffca28;
+    }
+
+    /* ======== HEADER ======== */
+    .gallery-header {
+      text-align: center;
+      background: linear-gradient(to right, #004d40, #00796b);
+      color: white;
+      padding: 50px 20px;
+    }
+
+    .gallery-header h2 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .sub-heading {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    /* ======== FILTER BUTTONS ======== */
+    .gallery-filters {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .filter-btn {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background-color: #004d40;
+    }
+
+    .filter-btn.active {
+      background-color: #ffca28;
+      color: #333;
+    }
+
+    /* ======== GALLERY GRID ======== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      margin: auto;
+      padding-bottom: 40px;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .caption {
+      padding: 10px;
+      font-weight: 600;
+      background-color: #fafafa;
+    }
+
+    /* ======== LIGHTBOX ======== */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.hidden {
+      display: none;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .lightbox-caption {
+      color: white;
+      margin-top: 15px;
+      font-size: 1.2em;
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2em;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+      text-align: center;
+      background-color: #004d40;
+      color: white;
+      padding: 15px 0;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Explore Durban</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Header Section -->
+  <section class="gallery-header">
+    <h2>Durban in Pictures</h2>
+    <p class="sub-heading">Explore Durban’s beauty through these stunning photos.</p>
+  </section>
+
+  <!-- Filter Buttons -->
+  <section class="gallery-filters">
+    <button class="filter-btn active" data-category="all">Show All</button>
+    <button class="filter-btn" data-category="beach">Beaches</button>
+    <button class="filter-btn" data-category="city">City</button>
+    <button class="filter-btn" data-category="mountain">Mountains</button>
+  </section>
+
+  <!-- Gallery Images -->
+  <section class="gallery-grid">
+    <div class="gallery-item" data-category="beach">
+      <img src="c:\Users\ACER\OneDrive\Thuly\golden mile.jpg" alt="Golden Mile Beach" class="gallery-img" />
+      <p class="caption">Golden Mile Beach</p>
+    </div>
+
+    <div class="gallery-item" data-category="city">
+      <img src="c:\Users\ACER\OneDrive\Thuly\skyline.jpg" alt="Durban City Skyline" class="gallery-img" />
+      <p class="caption">Durban City Skyline</p>
+    </div>
+
+    <div class="gallery-item" data-category="mountain">
+      <img src="c:\Users\ACER\OneDrive\Thuly\Valley_of_a_Thousand_Hills.jpg" alt="Valley of a Thousand Hills" class="gallery-img" />
+      <p class="caption">Valley of a Thousand Hills</p>
+    </div>
+
+    <div class="gallery-item" data-category="city">
+      <img src="c:\Users\ACER\OneDrive\Thuly\moses.jpg" alt="Moses Mabhida Stadium" class="gallery-img" />
+      <p class="caption">Moses Mabhida Stadium</p>
+    </div>
+
+    <div class="gallery-item" data-category="beach">
+      <img src="c:\Users\ACER\OneDrive\Thuly\ushaka.jpg" alt="uShaka Marine World" class="gallery-img" />
+      <p class="caption">uShaka Marine World</p>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <img id="lightbox-img" src="" alt="Expanded Image" />
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+    <button id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore Durban | Designed by Nthuseng</p>
+  </footer>
+
+  <!-- Internal Script -->
+  <script>
+    // FILTER BUTTONS
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.dataset.category;
+        galleryItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // LIGHTBOX FUNCTION
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.remove('hidden');
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = img.nextElementSibling.textContent;
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
