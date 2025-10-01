@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ======== GENERAL ======== */
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -18,8 +17,6 @@
     h1, h2 {
       font-family: 'Lora', serif;
     }
-
-    /* ======== NAVIGATION BAR ======== */
     header {
       background-color: #00695c;
       color: white;
@@ -59,8 +56,6 @@
     .nav-links .active {
       color: #ffca28;
     }
-
-    /* ======== HEADER ======== */
     .gallery-header {
       text-align: center;
       background: linear-gradient(to right, #004d40, #00796b);
@@ -78,7 +73,6 @@
       opacity: 0.9;
     }
 
-    /* ======== FILTER BUTTONS ======== */
     .gallery-filters {
       text-align: center;
       margin: 30px 0;
@@ -103,8 +97,6 @@
       background-color: #ffca28;
       color: #333;
     }
-
-    /* ======== GALLERY GRID ======== */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -140,7 +132,6 @@
       background-color: #fafafa;
     }
 
-    /* ======== LIGHTBOX ======== */
     .lightbox {
       position: fixed;
       top: 0;
@@ -181,7 +172,6 @@
       cursor: pointer;
     }
 
-    /* ======== FOOTER ======== */
     footer {
       text-align: center;
       background-color: #004d40;
@@ -193,7 +183,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <header>
     <nav class="navbar">
       <h1 class="logo">Explore Durban</h1>
@@ -204,25 +193,19 @@
       </ul>
     </nav>
   </header>
-
-  <!-- Header Section -->
   <section class="gallery-header">
     <h2>Durban in Pictures</h2>
     <p class="sub-heading">Explore Durban’s beauty through these stunning photos.</p>
   </section>
-
-  <!-- Filter Buttons -->
   <section class="gallery-filters">
     <button class="filter-btn active" data-category="all">Show All</button>
-    <button class="filter-btn" data-category="beach">Beaches</button>
-    <button class="filter-btn" data-category="city">City</button>
-    <button class="filter-btn" data-category="mountain">Mountains</button>
+    <button class="filter-btn" data-category="beach"Show Beaches</button>
+    <button class="filter-btn" data-category="city">Show City</button>
+    <button class="filter-btn" data-category="mountain">Show Mountains</button>
   </section>
-
-  <!-- Gallery Images -->
   <section class="gallery-grid">
     <div class="gallery-item" data-category="beach">
-      <img src="c:\Users\ACER\OneDrive\Thuly\golden mile.jpg" alt="Golden Mile Beach" class="gallery-img" />
+      <img src="golden.jpg" alt="Golden Mile Beach" class="gallery-img" />
       <p class="caption">Golden Mile Beach</p>
     </div>
 
@@ -247,21 +230,17 @@
     </div>
   </section>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox hidden">
     <img id="lightbox-img" src="" alt="Expanded Image" />
     <p id="lightbox-caption" class="lightbox-caption"></p>
     <button id="lightbox-close" aria-label="Close Lightbox">&times;</button>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Explore Durban | Designed by Nthuseng</p>
   </footer>
 
-  <!-- Internal Script -->
   <script>
-    // FILTER BUTTONS
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -281,7 +260,6 @@
       });
     });
 
-    // LIGHTBOX FUNCTION
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
@@ -305,4 +283,5 @@
   </script>
 </body>
 </html>
+
 
